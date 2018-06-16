@@ -23,7 +23,7 @@ public class Principal {
         return null;
     }
   //criando a arvore codificada
-    public static Arvore CodificacaoArvore(int[] LetrasRepetidas)
+    public static Arvore CodificacaoArvore(long[] LetrasRepetidas)
     {
         //Cria uma fila de prioridade de Arvore
         PriorityQueue<Arvore> arvores = new PriorityQueue<Arvore>();
@@ -186,9 +186,11 @@ public static void main(String[] args) {
          }catch(Exception e){
              JOptionPane.showMessageDialog(null,e.getMessage());
          }
+         
+         System.out.println("Tamanho Frase:"+frase.toCharArray().length);
          //////////Repetições das letras
          //Maximo de bits 256
-         int[] repiticoesLetras = new int[256];
+         long[] repiticoesLetras = new long[19999999];
          for (char c : frase.toCharArray()) 
          {
                repiticoesLetras[c]++;
@@ -198,7 +200,7 @@ public static void main(String[] args) {
          System.out.println("Tabela com os Codigos");
          System.out.println("Símbolo\tQuantidade\tCodígo");
          
-        //imprimirCodigos(arvore, new StringBuffer());
+         imprimirCodigos(arvore, new StringBuffer());
         //codificar  o texto
         
         String codificar = CodificarTexto(arvore, frase);

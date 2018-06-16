@@ -13,7 +13,7 @@ public class Folha extends Arvore{
     
     public char letras;
     
-    public Folha(int Frequencia , char Letras){
+    public Folha(long Frequencia , char Letras){
         super(Frequencia);
         this.letras = Letras;
     }

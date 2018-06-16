@@ -9,9 +9,9 @@ package àrvore;
  * @author Luiz Felipe Arndt
  */
 public abstract class Arvore implements Comparable<Arvore> {
-    public int frequencia;
+    public long frequencia;
     
-    public Arvore (int Frequencia)
+    public Arvore (long Frequencia)
     {
         this.frequencia = Frequencia;
     }
@@ -19,6 +19,12 @@ public abstract class Arvore implements Comparable<Arvore> {
     @Override
     public int compareTo(Arvore arvore)
     {
-       return this.frequencia - arvore.frequencia;    
+       long Result = this.frequencia - arvore.frequencia;
+       if(Result == 0)
+           return 0;
+       else if(this.frequencia<Result)
+           return 1;
+       else
+           return -1;
     }
 }
